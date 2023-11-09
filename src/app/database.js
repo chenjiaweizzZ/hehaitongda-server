@@ -9,20 +9,20 @@ const connectionPool = mysql.createPool({
     connectionLimit: 5,
 })
 
-// connectionPool.getConnection((err, connection) => {
-//     if (err) {
-//         console.log('Error connecting to Db')
-//         return
-//     }
-//     connection.connect(err => {
-//         if(err) {
-//         console.log('Error connecting to Db2')
-//         }else {
-//             console.log('Sucess connecting to Db')
-//         }
-//     })
-// })
+connectionPool.getConnection((err, connection) => {
+    if (err) {
+        console.log('Error connecting to Db')
+        return
+    }
+    connection.connect(err => {
+        if(err) {
+        console.log('Error connecting to Db2')
+        }else {
+            console.log('Sucess connecting to Db')
+        }
+    })
+})
 
 const connection = connectionPool.promise()
 
-module.export = connection
+module.exports = connection

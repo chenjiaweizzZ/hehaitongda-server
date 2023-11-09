@@ -1,9 +1,14 @@
 const connection = require('../app/database')
 
 class UserService {
-    create(user) {
-        console.log(user)
+    async create(user) {
+        const { name, password } = user
+        const statement = 'INSERT INTO `admin` (username, password) VALUES (?, ?);'
+        const result = await connection.execute(statement, [name, password])
+        return result
     }
 }
 
-module.exports = UserService;
+
+
+module.exports = new UserService();
