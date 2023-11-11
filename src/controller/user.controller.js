@@ -11,8 +11,8 @@ class UserController {
         }
     }
     async sign(ctx, next) {
-        const { id, name } = ctx.user
-        const token = jwt.sign({ id, name }, PRIVATE_KEY, { 
+        const { id, username } = ctx.user
+        const token = jwt.sign({ id, username }, PRIVATE_KEY, { 
             expiresIn: 60 * 60 * 24,
             algorithm: 'RS256'
         })
@@ -21,7 +21,7 @@ class UserController {
             data: {
                 token,
                 id,
-                name
+                username
             }
         }
     }
