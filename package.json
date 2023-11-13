@@ -19,10 +19,14 @@
   },
   "homepage": "https://github.com/chenjiaweizzZ/hehaitongda-server#readme",
   "dependencies": {
+    "@koa/multer": "^3.0.2",
     "@koa/router": "^12.0.1",
     "jsonwebtoken": "^9.0.2",
     "koa": "^2.14.2",
     "koa-bodyparser": "^4.4.1",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.3"
   }
 }

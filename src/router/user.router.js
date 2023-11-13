@@ -6,5 +6,6 @@ const userRouter = new KoaRouter({ prefix: '/user' })
 userRouter.post('/register', verifyRegister, UserController.create)
 userRouter.post('/login',verifyLogin,UserController.sign)
 userRouter.post('/test',verifyAuth,UserController.test)
+
  
 module.exports = userRouter 
